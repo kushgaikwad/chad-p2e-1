@@ -22,9 +22,11 @@ const ClaimChad = (props: Props) => {
         <Web3Button contractAddress={CHAD_DEV_SM_ADDRESS}
           action={(contract) => contract.erc1155.claim(0, 1)} 
           onSuccess={notify}
+          onError={(error) => {
+            console.log(error)
+            alert("Something went wrong!")}
+          }
           >Claim a Chad</Web3Button>
-
-       
       </div>
      
 
