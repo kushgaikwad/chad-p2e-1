@@ -5,6 +5,8 @@ import Image from 'next/image';
 import React from 'react'
 import { DRINKS_SM_ADDRESS } from '../constants/addresses';
 import Loading from './Loading';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 type Props = {
@@ -15,6 +17,8 @@ const ShopNFTCard: React.FC<Props> = ({ nft }) => {
 
     const { contract: drinksContract } = useContract(DRINKS_SM_ADDRESS);
     const { data: activeClaimCondition, isLoading, error } = useActiveClaimCondition(drinksContract, nft.metadata.id);
+
+    const notify = () => alert(`Succesfully bought a ${nft.metadata.name}!`);
 
     return (
         <div className='flex flex-col items-center justify-center gap-2'>
@@ -28,10 +32,15 @@ const ShopNFTCard: React.FC<Props> = ({ nft }) => {
             <Web3Button
                 contractAddress={DRINKS_SM_ADDRESS}
                 action={(contract) => contract.erc1155.claim(nft.metadata.id, 1)}
+                onSuccess={notify}
             >
                 Buy
             </Web3Button>
-        </div>
+           
+
+
+        </div >
+
     )
 }
 

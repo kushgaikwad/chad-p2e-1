@@ -15,6 +15,8 @@ const NFTCard: React.FC<Props> = ({ nft }) => {
     const { contract: drinksContract } = useContract(DRINKS_SM_ADDRESS);
     const { contract: drinkStakeContract } = useContract(DRINK_STAKE_SM_ADDRESS);
 
+    const notifyStake = () => alert(`Successfully Staked ${nft ? nft.metadata.name : ''}!`);
+
     const stakeNFT = async (id: string) => {
         if (!userAddress) {
             return;
@@ -32,16 +34,18 @@ const NFTCard: React.FC<Props> = ({ nft }) => {
     return (
         <div className="flex flex-col items-center max-w-sm overflow-hidden rounded shadow-lg">
             <div className="pt-3 ">
-            <Image  src={nft.metadata.image!} alt='NFT' width={150} height={150} />
+                <Image src={nft.metadata.image!} alt='NFT' width={150} height={150} />
             </div>
-           
+
             <div className="py-3 mb-1 text-xl font-bold">{nft.metadata.name} : {nft.quantityOwned}</div>
             <Web3Button contractAddress={DRINK_STAKE_SM_ADDRESS}
-                action={() => stakeNFT(nft.metadata.id)}>
+                action={() => stakeNFT(nft.metadata.id)}
+                onSuccess={notifyStake}
+                >
+
                 Stake
             </Web3Button>
-
-
+           
         </div>
     )
 }

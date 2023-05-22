@@ -4,7 +4,7 @@ import Link from 'next/link'
 import React from 'react'
 import { DRINKS_SM_ADDRESS, DRINK_STAKE_SM_ADDRESS } from '../constants/addresses'
 
-import NFTCard from './YourNFTCard'
+import YourNFTCard from './YourNFTCard'
 
 type Props = {
     nft: NFT[] | undefined,
@@ -31,7 +31,7 @@ const YourDrinks: React.FC<Props> = ({ nft }) => {
         <>
             <div className='flex gap-7'> 
                  {nft?.map((nft) => (
-                <NFTCard nft={nft} key={nft.metadata.id} />
+                <YourNFTCard nft={nft} key={nft.metadata.id} />
             ))}</div>
 
         </>
