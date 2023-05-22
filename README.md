@@ -24,8 +24,16 @@ Smart contract addresses can be found in /constants/addresses.ts
 
 1. Claim a character by getting a Chad NFT for free once per wallet. (Need to hold test matic atleast for gas)
 2. Go to 'Shop' section and buy the drinks (Juice, Smoothie and Cocktail).
-3. you can claim a 'Juice NFT' for free once per wallet; you can  buy a 'Smoothie' for 5 $YES  or 'Cocktail' for 10 $YES tokens. 
-3. Stake these NFTs and earn $YES tokens by literally doing nothing :) : Following are the rewards you will recieve,
+
+| Drinks             | Price                                                                |
+| ----------------- | ------------------------------------------------------------------ |
+| Juice |  FREE(one per wallet)|
+| Smoothie | 5 $YES |
+| Cocktail | 10 $YES|
+
+
+4. you can claim a 'Juice NFT' for free once per wallet; you can  buy a 'Smoothie' for 5 $YES  or 'Cocktail' for 10 $YES tokens. 
+5. Stake these NFTs and earn $YES tokens by literally doing nothing :) : Following are the rewards you will recieve,
 
 ## Staking rewards
 
