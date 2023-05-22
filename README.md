@@ -1,35 +1,19 @@
-## Getting Started
+## Motivation
 
-Create a project using this example:
+To check the Developer experience and practise thirdweb SDK
 
-```bash
-npx thirdweb create --template next-typescript-starter
-```
+Nextjs app with typescript, Tailwind CSS and thirdweb sdk
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Used thirweb audited ERC1155, ERC20 and EIC 4337 smart wallet contracts
 
-On `pages/_app.tsx`, you'll find our `ThirdwebProvider` wrapping your app, this is necessary for our [hooks](https://portal.thirdweb.com/react) and
-[UI Components](https://portal.thirdweb.com/ui-components) to work.
 
-### Deploy to IPFS
+## Usage
 
-Deploy a copy of your application to IPFS using the following command:
+Project deployed on Mumbai polygon testnet
 
-```bash
-yarn deploy
-```
-
-## Learn More
-
-To learn more about thirdweb and Next.js, take a look at the following resources:
-
-- [thirdweb React Documentation](https://docs.thirdweb.com/react) - learn about our React SDK.
-- [thirdweb TypeScript Documentation](https://docs.thirdweb.com/typescript) - learn about our JavaScript/TypeScript SDK.
-- [thirdweb Portal](https://docs.thirdweb.com) - check our guides and development resources.
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-
-You can check out [the thirdweb GitHub organization](https://github.com/thirdweb-dev) - your feedback and contributions are welcome!
-
-## Join our Discord!
-
-For any questions, suggestions, join our discord at [https://discord.gg/thirdweb](https://discord.gg/thirdweb).
+1. Claim a Chad NFT for free (Need to hold test matic atleast for gas)
+2. Claim a 'Juice NFT' for free; you can also buy a 'Smoothie' or 'Cocktail' for 5 $YES and 10 $YES respectively 
+3. Stake these NFTs and earn $YES token: Following are the rewards you will recieve,
+    Juice NFT: 1 $YES per minute
+    Smoothie NFT: 1 $YES per minute
+    Cocktail NFT: 1 $YES per minute
