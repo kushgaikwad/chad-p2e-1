@@ -33,12 +33,14 @@ const StakeGame: React.FC<Props> = ({ tokenId }) => {
                         contractAddress={DRINK_STAKE_SM_ADDRESS}
                         action={(contract) => contract.call('withdraw', [tokenId, 1])}
                         onSuccess={notifyUnstake}
+                        onError={(error) => alert("Something went wrong!")}
                     >Unstake</Web3Button>
                     <p className='text-xl font-bold'>Claimable $YES: {ethers.utils.formatUnits(claimableRewards[1], 18).slice(0, 4)}</p>
                     <Web3Button
                         contractAddress={DRINK_STAKE_SM_ADDRESS}
                         action={(contract) => contract.call('claimRewards', [tokenId])}
                         onSuccess={notifyClaimed}
+                        onError={(error) => alert("Something went wrong!")}
                     >Claim $YES</Web3Button>
                     
 

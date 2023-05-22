@@ -33,6 +33,7 @@ const ShopNFTCard: React.FC<Props> = ({ nft }) => {
                 contractAddress={DRINKS_SM_ADDRESS}
                 action={(contract) => contract.erc1155.claim(nft.metadata.id, 1)}
                 onSuccess={notify}
+                onError={(error) => alert("Something went wrong!")}
             >
                 Buy
             </Web3Button>

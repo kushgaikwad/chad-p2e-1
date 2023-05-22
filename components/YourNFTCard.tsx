@@ -41,6 +41,7 @@ const NFTCard: React.FC<Props> = ({ nft }) => {
             <Web3Button contractAddress={DRINK_STAKE_SM_ADDRESS}
                 action={() => stakeNFT(nft.metadata.id)}
                 onSuccess={notifyStake}
+                onError={(error) => alert("Something went wrong!")}
                 >
 
                 Stake

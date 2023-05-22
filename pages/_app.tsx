@@ -4,42 +4,33 @@ import "../styles/globals.css";
 import Wrapper from "../components/Wrapper";
 import Navbar from "../components/Navbar";
 import { SMART_WALLET_FACTORY_SM_ADDRESS } from "../constants/addresses";
+import { Mumbai } from "@thirdweb-dev/chains";
+import { Crimson_Pro } from 'next/font/google';
 
-
-
-// This is the chain your dApp will work on.
-// Change this to the chain your app is built for.
-// You can also import additional chains from `@thirdweb-dev/chains` and pass them directly.
-const activeChain = "mumbai";
+const crimsonPro = Crimson_Pro({ subsets: ['latin'] });
 
 function MyApp({ Component, pageProps }: AppProps) {
 
-  const API_KEY = process.env.THIRDWEB_API_KEY;
   return (
-    <ThirdwebProvider activeChain={activeChain} supportedWallets={[
+    <ThirdwebProvider activeChain={Mumbai} supportedWallets={[
       smartWallet({
+       
         factoryAddress: SMART_WALLET_FACTORY_SM_ADDRESS,
-        thirdwebApiKey: API_KEY!,
+        thirdwebApiKey: process.env.THIRDWEB_API_KEY as string,
         gasless: true,
         personalWallets: [
           metamaskWallet(),
-          localWallet({persist:true}),
+          // localWallet({persist: true}), // persisits the user
+          localWallet(),
           coinbaseWallet(),
         ]
       })
     ]}>
-     
-        <Wrapper>
-          <Navbar />
-          <Component {...pageProps} />
+      <Wrapper className={crimsonPro.className}>
+        <Navbar />
+        <Component {...pageProps} />
 
-        </Wrapper>
-
-       
-     
-
-
-
+      </Wrapper>
     </ThirdwebProvider>
   );
 }
