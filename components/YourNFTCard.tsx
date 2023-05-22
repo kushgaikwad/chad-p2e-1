@@ -43,7 +43,6 @@ const NFTCard: React.FC<Props> = ({ nft }) => {
                 onSuccess={notifyStake}
                 onError={(error) => alert("Something went wrong!")}
                 >
-
                 Stake
             </Web3Button>
            

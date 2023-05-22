@@ -1,8 +1,7 @@
-import { useAddress, useContract } from '@thirdweb-dev/react'
 import { NFT } from '@thirdweb-dev/sdk'
 import Link from 'next/link'
 import React from 'react'
-import { DRINKS_SM_ADDRESS, DRINK_STAKE_SM_ADDRESS } from '../constants/addresses'
+
 
 import YourNFTCard from './YourNFTCard'
 
@@ -11,7 +10,7 @@ type Props = {
 }
 
 const YourDrinks: React.FC<Props> = ({ nft }) => {
-  
+
     if (nft?.length === 0) {
         return (
             <div>
@@ -29,10 +28,10 @@ const YourDrinks: React.FC<Props> = ({ nft }) => {
 
     return (
         <>
-            <div className='flex gap-7'> 
-                 {nft?.map((nft) => (
-                <YourNFTCard nft={nft} key={nft.metadata.id} />
-            ))}</div>
+            <div className='flex gap-7'>
+                {nft?.map((nft) => (
+                    <YourNFTCard nft={nft} key={nft.metadata.id} />
+                ))}</div>
 
         </>
 

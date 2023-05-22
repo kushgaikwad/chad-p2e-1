@@ -3,14 +3,12 @@ import React from 'react'
 import { CHAD_DEV_SM_ADDRESS } from '../constants/addresses';
 import Image from 'next/image';
 
-
-
 type Props = {}
 
 const ClaimChad = (props: Props) => {
 
   const { contract: chadDevContract } = useContract(CHAD_DEV_SM_ADDRESS);
-  const { data: contractMetadata, isLoading } = useContractMetadata(chadDevContract);
+  const { data: contractMetadata } = useContractMetadata(chadDevContract);
 
   const notify = () => alert('Successfully claimed a Chad!');
 

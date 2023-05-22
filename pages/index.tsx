@@ -65,24 +65,16 @@ const Home: NextPage = () => {
 
       <h3 className="py-4 mt-5 text-3xl ">Stake Game:</h3>
       <div className="flex items-center justify-center gap-10">
-     
-      {
-        stakeData && stakeData[0].length !== 0 ? (  stakeData[0].map((nft: BigNumber) => (
-          <StakeGame
-            key={nft.toNumber()}
-            tokenId={nft.toNumber()}
-          />
-        ))) : (<div className="py-5 text-md">..Stake your drinks to earn $YES..</div>)
-       }
 
-
-
+        {
+          stakeData && stakeData[0].length !== 0 ? (stakeData[0].map((nft: BigNumber) => (
+            <StakeGame
+              key={nft.toNumber()}
+              tokenId={nft.toNumber()}
+            />
+          ))) : (<div className="py-5 text-md">..Stake your drinks to earn $YES..</div>)
+        }
       </div>
-
-
-
-
-
     </>
   );
 };

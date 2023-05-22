@@ -3,8 +3,6 @@ import { ethers } from 'ethers';
 import Image from 'next/image';
 import React from 'react'
 import { DRINKS_SM_ADDRESS, DRINK_STAKE_SM_ADDRESS } from '../constants/addresses';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 type Props = {
     tokenId: number,
@@ -41,9 +39,7 @@ const StakeGame: React.FC<Props> = ({ tokenId }) => {
                         action={(contract) => contract.call('claimRewards', [tokenId])}
                         onSuccess={notifyClaimed}
                         onError={(error) => alert("Something went wrong!")}
-                    >Claim $YES</Web3Button>
-                    
-
+                    >Claim $YES</Web3Button>        
                 </div>
             )}
 
