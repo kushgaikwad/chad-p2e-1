@@ -26,7 +26,7 @@ const Home: NextPage = () => {
 
   if (!userAddress) {
     return <div className="flex flex-col items-center justify-center h-screen gap-10 ">
-      <h2 className="font-bold text-7xl">Welcome to Chad p2e</h2>
+      <h1 className="font-bold text-7xl">Welcome to Chad p2e</h1>
       <ConnectWallet />
     </div>
   }
@@ -43,18 +43,18 @@ const Home: NextPage = () => {
     <>
       <div className="flex items-center py-4 justify-evenly">
         <div>
-          <h3 className="text-3xl font-bold">Your Chad:</h3>
+          <h2 className="text-3xl font-bold">Your Chad:</h2>
           {ownedChadNFT?.map((nft) => (
             <div key={nft.metadata.id}>
               <Image className="py-3" src={nft.metadata.image!} alt='Chad' width={150} height={150} />
             </div>
           ))}
 
-          <span>Your $YES balance: </span>
-          {yesBalance && <p className="text-lg font-bold">{ethers.utils.formatUnits(yesBalance.value, 18).slice(0, 4)}</p>}
+          <p>Your $YES balance: </p>
+          {yesBalance && <p className="text-lg font-bold">{ethers.utils.formatUnits(yesBalance.value, 18).slice(0,8)}</p>}
         </div>
         <div >
-          <h3 className="text-3xl font-bold">Your available drinks:</h3>
+          <h2 className="text-3xl font-bold">Your available drinks:</h2>
 
           <YourDrinks nft={ownedDrinkNFTs} />
         </div>
@@ -63,7 +63,7 @@ const Home: NextPage = () => {
 
 
 
-      <h3 className="py-4 mt-5 text-3xl ">Stake Game:</h3>
+      <h2 className="py-4 mt-5 text-3xl ">Stake Game:</h2>
       <div className="flex items-center justify-center gap-10">
 
         {
@@ -72,7 +72,7 @@ const Home: NextPage = () => {
               key={nft.toNumber()}
               tokenId={nft.toNumber()}
             />
-          ))) : (<div className="py-5 text-md">..Stake your drinks to earn $YES..</div>)
+          ))) : (<p className="py-5 text-md">..Stake your drinks to earn $YES..</p>)
         }
       </div>
     </>

@@ -14,7 +14,6 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThirdwebProvider activeChain={Mumbai} supportedWallets={[
       smartWallet({
-       
         factoryAddress: SMART_WALLET_FACTORY_SM_ADDRESS,
         thirdwebApiKey: process.env.THIRDWEB_API_KEY as string,
         gasless: true,
@@ -29,7 +28,6 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Wrapper className={crimsonPro.className}>
         <Navbar />
         <Component {...pageProps} />
-
       </Wrapper>
     </ThirdwebProvider>
   );

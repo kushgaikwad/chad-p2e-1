@@ -21,7 +21,6 @@ const StakeGame: React.FC<Props> = ({ tokenId }) => {
 
     return (
         <div>
-
             {nft && (
                 <div className='flex flex-col items-center justify-center gap-4'>
                     <Image src={nft.metadata.image!} alt='nft' width={150} height={150} />
@@ -33,7 +32,7 @@ const StakeGame: React.FC<Props> = ({ tokenId }) => {
                         onSuccess={notifyUnstake}
                         onError={(error) => alert("Something went wrong!")}
                     >Unstake</Web3Button>
-                    <p className='text-xl font-bold'>Claimable $YES: {ethers.utils.formatUnits(claimableRewards[1], 18).slice(0, 4)}</p>
+                    <p className='text-xl font-bold'>Claimable $YES: {ethers.utils.formatUnits(claimableRewards[1], 18).slice(0,8)}</p>
                     <Web3Button
                         contractAddress={DRINK_STAKE_SM_ADDRESS}
                         action={(contract) => contract.call('claimRewards', [tokenId])}

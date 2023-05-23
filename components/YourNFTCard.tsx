@@ -1,8 +1,9 @@
 import React from 'react'
 import Image from 'next/image';
 import { NFT } from '@thirdweb-dev/sdk';
-import { useAddress, useContract, Web3Button } from '@thirdweb-dev/react';
+import { useAddress, useContract, useContractRead, Web3Button } from '@thirdweb-dev/react';
 import { DRINKS_SM_ADDRESS, DRINK_STAKE_SM_ADDRESS } from '../constants/addresses';
+import { ethers } from 'ethers';
 
 type Props = {
     nft: NFT
@@ -14,6 +15,7 @@ const NFTCard: React.FC<Props> = ({ nft }) => {
     const userAddress = useAddress();
     const { contract: drinksContract } = useContract(DRINKS_SM_ADDRESS);
     const { contract: drinkStakeContract } = useContract(DRINK_STAKE_SM_ADDRESS);
+    //const { data, isLoading } = useContractRead(drinkStakeContract, "getRewardsPerUnitTime", [1]);
 
     const notifyStake = () => alert(`Successfully Staked ${nft ? nft.metadata.name : ''}!`);
 
